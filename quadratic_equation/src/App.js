@@ -27,8 +27,6 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // const x1 = (- this.state.inputB + Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA);
-    // const x2 = (- this.state.inputB - Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA);
     if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC < 0){
       this.setState({
           x1: "undefined",

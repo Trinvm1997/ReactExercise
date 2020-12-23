@@ -36,20 +36,20 @@ class App extends Component {
           <h1>Lai suat tien gui</h1>
           <p>so tien gui</p>
           <div style={{display: "inline-flex"}}>
-            <input name="money" type="number" min="1" step="1"></input><i>$</i>
+            <input onChange={this.handleChange} name="money" type="number" min="1" step="1"></input><i>$</i>
           </div>
           <p>ki han</p>
           <div style={{display: "inline-flex"}}>
-            <input name="time" type="number" min="1" max="36" step="1"></input><p>thang</p>
+            <input onChange={this.handleChange} name="time" type="number" min="1" max="36" step="1"></input><p>thang</p>
           </div>
           <p>ngay gui</p>
           <input type="date"></input>
           <p>lai suat</p>
           <div style={{display: "inline-flex"}}>
-            <input name="interestRate" type="number" step="0.01"></input><p>%/nam</p>
+            <input onChange={this.handleChange} name="interestRate" type="number" step="0.01"></input><p>%/nam</p>
           </div>
           <br />
-          <button>Calculate</button>
+          <button onClick={this.handleSubmit}>Calculate</button>
           <p>lai suat: {this.state.interest}</p>         
         </form>
       </div>

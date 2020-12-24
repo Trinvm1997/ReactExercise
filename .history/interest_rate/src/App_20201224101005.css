@@ -47,12 +47,6 @@ form {
   background-color: aquamarine;
 }
 
-form div {
+form.div {
   display: flex;
-  margin: 10px;
-  justify-content: center;
-}
-form div input {
-  margin-left: 10px;
-  margin-right: 10px;
 }

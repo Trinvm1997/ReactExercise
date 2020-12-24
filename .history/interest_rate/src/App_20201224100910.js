@@ -34,22 +34,23 @@ class App extends Component {
       <div className="App">
         <h1>Lãi suất tiền gửi</h1>
         <form>
-          <div>
-          <p>Số tiền gửi: </p><input onChange={this.handleChange} name="money" type="number" min="1" step="1"></input><p>$</p>
+          
+          <div style={{display: "inline-flex"}}>
+          <p>so tien gui</p><input onChange={this.handleChange} name="money" type="number" min="1" step="1"></input><i>$</i>
           </div>
-          <div>
-          <p>Kì hạn:</p><input onChange={this.handleChange} name="time" type="number" min="1" max="36" step="1"></input><p>tháng</p>
+          <p>ki han</p>
+          <div style={{display: "inline-flex"}}>
+            <input onChange={this.handleChange} name="time" type="number" min="1" max="36" step="1"></input><p>thang</p>
           </div>
-          <div>
-          <p>Ngày gửi: </p>
+          <p>ngay gui</p>
           <input type="date"></input>
-          </div>
-          <div>
-          <p>Tỉ lệ lãi suất: </p><input onChange={this.handleChange} name="interestRate" type="number" step="0.01"></input><p>%/năm</p>
+          <p>lai suat</p>
+          <div style={{display: "inline-flex"}}>
+            <input onChange={this.handleChange} name="interestRate" type="number" step="0.01"></input><p>%/nam</p>
           </div>
           <br />
-          <button onClick={this.handleSubmit}>Tính lãi suất</button>
-          <p>lãi xuất: {this.state.interest}</p>         
+          <button onClick={this.handleSubmit}>Calculate</button>
+          <p>lai suat: {this.state.interest}</p>         
         </form>
       </div>
     );

@@ -35,7 +35,7 @@ class App extends Component {
         <h1>Lãi suất tiền gửi</h1>
         <form>
           <div>
-          <p>Số tiền gửi: </p><input onChange={this.handleChange} name="money" type="number" min="1" step="1"></input><p>$</p>
+          <p>Số tiền gửi: </p><input onChange={this.handleChange} name="money" type="number" min="1" step="1"></input><i>$</i>
           </div>
           <div>
           <p>Kì hạn:</p><input onChange={this.handleChange} name="time" type="number" min="1" max="36" step="1"></input><p>tháng</p>

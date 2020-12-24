@@ -33,19 +33,17 @@ class App extends Component {
     } 
     else if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC < 0){
       this.setState({
-        result: "Phương trình vô nghiệm"    
-      });
+          x1: "undefined",
+          x2: "undefined"
+        });
     }
     else if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC === 0){
-      this.setState({
-        result: `Phương trình có một nghiệm kép X = ${-this.state.inputB/(2*this.state.inputA)}`
-      })
+
     }
     else{
       this.setState({
-        result: `Phương trình có hai nghiệm phân biệt 
-        x1 = ${(- this.state.inputB + Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)}
-        và x2 = ${(- this.state.inputB - Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)}`
+      x1: (- this.state.inputB + Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA),
+      x2: (- this.state.inputB - Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)
     });
   }
 }

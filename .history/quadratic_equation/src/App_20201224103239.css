@@ -51,7 +51,6 @@ input {
 button {
   margin-left: 10px;
   cursor: pointer;
-  margin-top: 3px;
 }
 
 @keyframes App-logo-spin {

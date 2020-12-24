@@ -8,7 +8,8 @@ class App extends Component {
       inputA:0,
       inputB:0,
       inputC:0,
-      result:""
+      x1:0,
+      x2:0
 
     };
     this.handleChange = this.handleChange.bind(this);
@@ -26,26 +27,15 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if(this.state.inputA === 0) {
+    if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC < 0){
       this.setState({
-        result: `Phương trình có một nghiệm đơn x = ${-this.state.inputC/this.state.inputB}`
-      })
-    } 
-    else if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC < 0){
+          x1: "undefined",
+          x2: "undefined"
+        });
+    }else{
       this.setState({
-        result: "Phương trình vô nghiệm"    
-      });
-    }
-    else if(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC === 0){
-      this.setState({
-        result: `Phương trình có một nghiệm kép X = ${-this.state.inputB/(2*this.state.inputA)}`
-      })
-    }
-    else{
-      this.setState({
-        result: `Phương trình có hai nghiệm phân biệt 
-        x1 = ${(- this.state.inputB + Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)}
-        và x2 = ${(- this.state.inputB - Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)}`
+      x1: (- this.state.inputB + Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA),
+      x2: (- this.state.inputB - Math.sqrt(Math.pow(this.state.inputB,2) - 4*this.state.inputA*this.state.inputC))/(2*this.state.inputA)
     });
   }
 }
@@ -61,9 +51,10 @@ class App extends Component {
           <h2>X+</h2>
           <input type="number" name="inputC" value={this.state.inputC} onChange={this.handleChange}></input>
           <h2>= 0</h2>
-          <button onClick={this.handleSubmit}>Tính</button>
+          <button onClick={this.handleSubmit}>Calculate</button>
         </form>
-        <h2>{this.state.result}</h2>
+        <h1>Nghiem phuong trinh</h1>
+        <p>x1 = {this.state.x1} and x2 = {this.state.x2}</p>
       </div>
     );
   }

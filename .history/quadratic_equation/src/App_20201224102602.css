@@ -45,13 +45,7 @@ form input {
 
 input {
   width: 50px;
-  height: 30px;
-}
-
-button {
-  margin-left: 10px;
-  cursor: pointer;
-  margin-top: 3px;
+  height: 30px
 }
 
 @keyframes App-logo-spin {

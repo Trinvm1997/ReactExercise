@@ -29,29 +29,16 @@
 }
 
 form {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  border: 1px solid black;
-  margin: 50px;
-  padding: 50px;
-  align-items: center;
-  background-color: aquamarine;
 }
 
-form input {
-  margin-left: 10px;
-  margin-right: 10px;
+h2 {
+  margin: 1%;
 }
 
 input {
-  width: 50px;
-  height: 30px;
-}
-
-button {
-  margin-left: 10px;
-  cursor: pointer;
-  margin-top: 3px;
+  width: 10%;
 }
 
 @keyframes App-logo-spin {

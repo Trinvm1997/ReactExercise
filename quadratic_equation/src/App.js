@@ -1,5 +1,5 @@
 import './App.css';
-import React, { Component, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 // class App extends Component {
 //   constructor(props) {
@@ -70,13 +70,19 @@ import React, { Component, useState } from 'react';
 // }
 
 const App = () => {
-  const [a,setA] = useState(null);
-  const [b,setB] = useState(null);
-  const [c,setC] = useState(null);
+  // const [a,setA] = useState(null);
+  // const [b,setB] = useState(null);
+  // const [c,setC] = useState(null);
+  const inputA = useRef();
+  const inputB = useRef();
+  const inputC = useRef();
   const [result,setResult] = useState(null);
 
   const calculate = (event) => {
     event.preventDefault();
+    const a = inputA.current.valueAsNumber;
+    const b = inputB.current.valueAsNumber;
+    const c = inputC.current.valueAsNumber;
     if(Math.pow(b,2) - 4*a*c < 0){
       setResult("Phương trình vô nghiệm");    
     }
@@ -94,11 +100,11 @@ const App = () => {
     <div className="App">
         <h1>Giải phương trình bậc 2 </h1>
         <form>
-          <input type="number" placeholder="a" className="math-input" onChange={(e) => setA(e.target.valueAsNumber)}></input>
+          <input type="number" placeholder="a" className="math-input" ref={inputA}></input>
           <h2>X<sup>2</sup>+</h2>
-          <input type="number" placeholder="b" className="math-input" onChange={(e) => setB(e.target.valueAsNumber)}></input>
+          <input type="number" placeholder="b" className="math-input" ref={inputB}></input>
           <h2>X+</h2>
-          <input type="number" placeholder="c" className="math-input" onChange={(e) => setC(e.target.valueAsNumber)}></input>
+          <input type="number" placeholder="c" className="math-input" ref={inputC}></input>
           <h2>= 0</h2>
           <button onClick={calculate}>Tính</button>
         </form>

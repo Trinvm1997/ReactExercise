@@ -55,4 +55,9 @@ form div {
 form div input {
   margin-left: 10px;
   margin-right: 10px;
+  align-self: center;
+}
+
+form button {
+  margin-bottom: 10px;
 }
